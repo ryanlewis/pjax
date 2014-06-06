@@ -546,7 +546,7 @@
       // oldEl.parentNode.removeChild(newEl)
       // oldEl.style.height = oldEl.getBoundingClientRect().height + "px"
 
-      forEach.call(oldEl.childNodes, function(el) {
+      Array.prototype.forEach.call(oldEl.childNodes, function(el) {
         elsToRemove.push(el)
         if (el.classList && !el.classList.contains("js-Pjax-remove")) {
           // for fast switch, clean element that just have been added, & not cleaned yet.
@@ -564,7 +564,7 @@
         }
       })
 
-      forEach.call(newEl.childNodes, function(el) {
+      Array.prototype.forEach.call(newEl.childNodes, function(el) {
         if (el.classList) {
           var addClasses = " js-Pjax-add " + switchOptions.classNames.add + " " + (options.backward ? switchOptions.classNames.forward : switchOptions.classNames.backward)
           if (switchOptions.callbacks && switchOptions.callbacks.addElement) {
